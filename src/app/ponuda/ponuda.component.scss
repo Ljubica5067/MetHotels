@@ -1,0 +1,32 @@
+.ponuda {
+    width:45%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #E2C9EF;
+    padding: 15px;
+    padding-left: 35px;
+    border-radius: 5px;
+}
+
+.ponuda p {
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.ponuda ul {
+    
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ponuda li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.ponuda ul ul {
+    margin-left: 20px;
+}

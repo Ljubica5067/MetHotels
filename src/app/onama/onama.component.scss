@@ -1,0 +1,17 @@
+p {
+    width:85%;
+    margin:1% auto 1% auto;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 0 10px;
+    font-weight: bold;
+    border-left: 5px solid #9E93E6;
+}
+
+p:first-child {
+    padding-top: 20px;
+}
+
+p:last-child {
+    padding-bottom: 20px;
+}

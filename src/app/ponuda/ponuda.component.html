@@ -1,0 +1,13 @@
+<div class="ponuda">
+    <p>
+        Naša ponuda soba za Vas:
+    </p>
+    <ul *ngFor="let room of room">
+        <li> Soba:
+            <ul>
+                <li>Tip sobe: {{room.tip}} </li>
+                <li>Cena: {{room.cena}} </li>
+            </ul>
+        </li>
+    </ul>
+</div>

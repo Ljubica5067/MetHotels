@@ -1,0 +1,26 @@
+.preporuka {
+    width: 30%;
+    margin: 1% auto 1% auto;
+    background-color: #D7D1FA;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.preporuka p {
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.preporuka ul {
+    list-style-type: none;
+    padding-left: 5%;
+}
+
+.preporuka li {
+    margin-bottom: 10px;
+}
+
+.preporuka ul ul {
+    margin-left: 20px;
+}
