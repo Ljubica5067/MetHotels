@@ -1,0 +1,55 @@
+.forma {
+    width:65%;
+    background-color: #E2C9EF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forma label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.forma input {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #413782;
+}
+
+.forma button {
+    width:16%;
+    padding: 10px 20px;
+    background-color: #a909ff;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+table {
+    width:68%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    border: 1px solid #413782;
+}
+
+th {
+    background-color: #D7D1FA;
+    padding: 10px;
+}
+
+td {
+    background-color: #DEC0F2;
+    padding: 10px;
+}

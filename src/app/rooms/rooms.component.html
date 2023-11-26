@@ -1,0 +1,24 @@
+<div class="forma">
+    <form>
+        <label>Tip sobe: </label>
+        <input type="text" name="tip" id="tip" #tip>
+        <label>Cena: </label>
+        <input type="number" name="cena" id="cena" #cena>
+        <button (click)="addRoom(tip,cena)">Unesi:</button>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>Tip sobe</th>
+        <th>Cena</th>
+    </tr>
+    <tr *ngFor="let room of rooms">
+        <td>
+            {{room.tip}}
+        </td>
+        <td>
+            {{room.cena}}
+        </td>
+    </tr>
+</table>
