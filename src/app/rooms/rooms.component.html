@@ -1,24 +1,41 @@
 <div class="forma">
-    <form>
+    <form [formGroup]="myForm">
+        <label>Korisnik:</label>
+        <input type="text" name="korisnik" id="korisnik" #korisnik placeholder="Ime i prezime" formControlName="korisnik" (ngModelChange)="onInputChange($event)">
+        <div *ngIf="myForm.controls['korisnik'].invalid && (myForm.controls['korisnik'].dirty || myForm.controls['korisnik'].touched)">Ime i prezime moraju da sadrže samo slova.</div>
         <label>Tip sobe: </label>
-        <input type="text" name="tip" id="tip" #tip>
-        <label>Cena: </label>
-        <input type="number" name="cena" id="cena" #cena>
-        <button (click)="addRoom(tip,cena)">Unesi:</button>
+        <select #tip formControlName="tip">
+            <option value="" disabled selected>Izaberite tip sobe</option>
+            <option value="jednokrevetna">Jednokrevetna</option>
+            <option value="dvokrevetna">Dvokrevetna</option>
+            <option value="trokrevetna">Trokrevetna</option>
+        </select><br/><br/>
+        <div *ngIf="myForm.controls['tip'].invalid && (myForm.controls['tip'].dirty || myForm.controls['tip'].touched)">Morate da izaberete tip sobe.</div>
+        <label>Dodatne usluge:</label>
+        <label class="uvuci">Klima
+        <input type="checkbox" id="klima" [(ngModel)]="klima" (change)="onCheckboxChange()" [ngModelOptions]="{standalone: true}"/></label>
+        <label class="uvuci">Minibar
+        <input type="checkbox"  id="minibar" [(ngModel)]="minibar" (change)="onCheckboxChange()" [ngModelOptions]="{standalone: true}"/></label>
+        <label class="uvuci">Sauna
+        <input type="checkbox"  id="sauna" [(ngModel)]="sauna" (change)="onCheckboxChange()" [ngModelOptions]="{standalone: true}"/></label>
+        <label class="uvuci">Pranje vesa
+        <input type="checkbox"  id="pranjeVesa" [(ngModel)]="pranjeVesa" (change)="onCheckboxChange()" [ngModelOptions]="{standalone: true}"/></label>
+        <div id="alert"></div>
+        <button class="dugme" (click)="addRoom(tip,korisnik)">Unesi:</button>
     </form>
 </div>
 
 <table>
     <tr>
         <th>Tip sobe</th>
-        <th>Cena</th>
+        <th>Korisnik</th>
     </tr>
     <tr *ngFor="let room of rooms">
         <td>
             {{room.tip}}
         </td>
         <td>
-            {{room.cena}}
+            {{room.korisnik}}
         </td>
     </tr>
 </table>
