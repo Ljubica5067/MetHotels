@@ -7,5 +7,5 @@ import { Rooms } from '../rooms/rooms.model';
   styleUrls: ['./preporuka.component.scss']
 })
 export class PreporukaComponent {
-  room=new Rooms("dvokrevetna","12000");
+  room=new Rooms("dvokrevetna","12000",7);
 }

@@ -1,8 +1,9 @@
 export class Rooms
 {
-    constructor(public tip:string,public korisnik:string)
+    constructor(public tipSobe:string,public korisnik:string,public brNoci:number)
     {
-        this.tip=tip;
+        this.tipSobe=tipSobe;
         this.korisnik=korisnik;
+        this.brNoci=brNoci;
     }
 }

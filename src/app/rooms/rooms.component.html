@@ -10,7 +10,10 @@
             <option value="dvokrevetna">Dvokrevetna</option>
             <option value="trokrevetna">Trokrevetna</option>
         </select><br/><br/>
+        <label>Broj nocenja:</label>
+        <input type="number" name="brNoci" id="brNoci" #brNoci placeholder="Broj nocenja" formControlName="brNoci">
         <div *ngIf="myForm.controls['tip'].invalid && (myForm.controls['tip'].dirty || myForm.controls['tip'].touched)">Morate da izaberete tip sobe.</div>
+        <br/><br/>
         <label>Dodatne usluge:</label>
         <label class="uvuci">Klima
         <input type="checkbox" id="klima" [(ngModel)]="klima" (change)="onCheckboxChange()" [ngModelOptions]="{standalone: true}"/></label>
@@ -21,7 +24,7 @@
         <label class="uvuci">Pranje vesa
         <input type="checkbox"  id="pranjeVesa" [(ngModel)]="pranjeVesa" (change)="onCheckboxChange()" [ngModelOptions]="{standalone: true}"/></label>
         <div id="alert"></div>
-        <button class="dugme" (click)="addRoom(tip,korisnik)">Unesi:</button>
+        <button class="dugme" (click)="addRoom(tip,korisnik,brNoci)">Unesi:</button>
     </form>
 </div>
 
@@ -29,13 +32,17 @@
     <tr>
         <th>Tip sobe</th>
         <th>Korisnik</th>
+        <th>Broj Nocenja</th>
     </tr>
     <tr *ngFor="let room of rooms">
         <td>
-            {{room.tip}}
+            {{room.tipSobe}}
         </td>
         <td>
             {{room.korisnik}}
+        </td>
+        <td>
+            {{room.brNoci}}
         </td>
     </tr>
 </table>

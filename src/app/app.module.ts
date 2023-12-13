@@ -10,6 +10,9 @@ import { PreporukaComponent } from './preporuka/preporuka.component';
 import { OnamaComponent } from './onama/onama.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { DiComponent } from './di/di.component';
+import { RoomServiceService } from './servis/room-service.service';
+import { Rooms } from './rooms/rooms.model';
 const routes:Routes=
 [
   { path: 'ponuda', component: PonudaComponent },
@@ -24,7 +27,8 @@ const routes:Routes=
     NavbarComponent,
     PonudaComponent,
     PreporukaComponent,
-    OnamaComponent
+    OnamaComponent,
+    DiComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -33,7 +37,7 @@ const routes:Routes=
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [RoomServiceService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

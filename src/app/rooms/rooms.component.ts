@@ -18,19 +18,20 @@ export class RoomsComponent {
   rooms:Rooms[];
   constructor()
   {
-    this.rooms=[new Rooms("jednokrevetna","Korisnik1"),new Rooms("dvokrevetna","Korisnik2"),new Rooms("trokrevetna","Korisnik3")];
+    this.rooms=[new Rooms("jednokrevetna","Korisnik1",5),new Rooms("dvokrevetna","Korisnik2",4),new Rooms("trokrevetna","Korisnik3",10)];
   }
   
-  addRoom(tip:HTMLSelectElement,korisnik:HTMLInputElement):boolean
+  addRoom(tipSobe:HTMLSelectElement,korisnik:HTMLInputElement,brNoci:HTMLInputElement):boolean
   {
-    this.rooms.push(new Rooms(tip.value,korisnik.value));
-    tip.value='';
+    this.rooms.push(new Rooms(tipSobe.value,korisnik.value,brNoci.valueAsNumber));
+    tipSobe.value='';
     korisnik.value='';
     return false;
   }
   myForm=new FormGroup({
     tip: new FormControl("", Validators.required),
-    korisnik: new FormControl("",Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]))
+    korisnik: new FormControl("",Validators.compose([Validators.required, Validators.pattern(/^[a-zA-Z]+$/)])),
+    brNoci: new FormControl("",Validators.required)
   })
 
   onInputChange(value: string) {
