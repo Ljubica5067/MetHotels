@@ -13,6 +13,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DiComponent } from './di/di.component';
 import { RoomServiceService } from './servis/room-service.service';
 import { Rooms } from './rooms/rooms.model';
+import { CrudRoomsComponent } from './crud-rooms/crud-rooms.component';
+import { HttpClientModule } from '@angular/common/http';
 const routes:Routes=
 [
   { path: 'ponuda', component: PonudaComponent },
@@ -28,14 +30,16 @@ const routes:Routes=
     PonudaComponent,
     PreporukaComponent,
     OnamaComponent,
-    DiComponent
+    DiComponent,
+    CrudRoomsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [RoomServiceService,],
   bootstrap: [AppComponent]

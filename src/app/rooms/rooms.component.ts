@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Rooms } from './rooms.model';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { filter } from 'rxjs';
 
 
 @Component({
@@ -15,7 +14,7 @@ export class RoomsComponent {
   sauna: boolean = false;
   pranjeVesa: boolean = false;
   racun: number = 0; 
-  rooms:Rooms[];
+  rooms:Rooms[]=[];
   constructor()
   {
     this.rooms=[new Rooms("jednokrevetna","Korisnik1",5),new Rooms("dvokrevetna","Korisnik2",4),new Rooms("trokrevetna","Korisnik3",10)];

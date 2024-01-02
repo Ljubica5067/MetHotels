@@ -1,0 +1,64 @@
+<nav class="navbar navbar-light" style="background-color: #413782;">
+    <div class="container-fluid">
+        <h3 style="color: white;">Letovi CRUD</h3>
+        <div class="d-flex">
+            <button (click)="clickDodavanje()" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #a909ff;border-color: #413782;color: aliceblue;">Dodaj sobu</button>
+        </div>
+    </div>
+</nav>
+
+<table class="table mt-3" style="background-color: #E2C9EF;">
+    <thead>
+        <tr style="background-color: #C1B6DE;">
+            <th scope="col">ID sobe</th>
+            <th scope="col">Tip sobe</th>
+            <th scope="col">Broj Nocenja</th>
+            <th scope="col">Korisnik</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of roomsData" style="background-color: #D7D1FA;">
+            <td>{{row.id}}</td>
+            <td>{{row.tipSobe}}</td>
+            <td>{{row.brNoci}}</td>
+            <td>{{row.korisnik}}</td>
+            <td>
+                <button (click)="edit(row)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #a909ff;border-color: #413782;color: aliceblue;">Edit</button>
+                <button (click)="deleteRoom(row)" class="btn btn-danger mx-3" style="background-color: #a909ff;border-color: #413782;color: aliceblue;">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #DEC0F2;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informacije o sobama</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="tipSobe" class="form-label">Tip Sobe</label>
+                        <input type="text" formControlName="tipSobe" class="form-control" id="tipSobe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="brNoci" class="form-label">Broj Noci</label>
+                        <input type="text" formControlName="brNoci" class="form-control" id="brNOci">
+                    </div>
+                    <div class="mb-3">
+                        <label for="korisnik" class="form-label">Korisnik</label>
+                        <input type="text" formControlName="korisnik" class="form-control" id="korisnik">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                <button type="button" *ngIf="showAdd" (click)="postRoomDetalje()" class="btn btn-primary">Dodaj</button>
+                <button type="button" *ngIf="showUpdate" (click)="updateDetalje()" class="btn btn-primary">Ažuriraj</button>
+            </div>
+        </div>
+    </div>
+</div>

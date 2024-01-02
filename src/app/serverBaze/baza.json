@@ -1,0 +1,26 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "tipSobe": "dvokrevetna",
+      "brNoci": 1,
+      "korisnik": "Korisnik0"
+    },
+    {
+      "id": 2,
+      "tipSobe": "jednokrevetna",
+      "brNoci": 3,
+      "korisnik": "Korisnik1"
+    },
+    {
+      "id": 3,
+      "tipSobe": "trokrevetna",
+      "brNoci": "5",
+      "korisnik": "Korisnik2"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
