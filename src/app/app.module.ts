@@ -15,12 +15,7 @@ import { RoomServiceService } from './servis/room-service.service';
 import { Rooms } from './rooms/rooms.model';
 import { CrudRoomsComponent } from './crud-rooms/crud-rooms.component';
 import { HttpClientModule } from '@angular/common/http';
-const routes:Routes=
-[
-  { path: 'ponuda', component: PonudaComponent },
-  { path: 'preporuka', component: PreporukaComponent },
-  { path: 'onama', component: OnamaComponent },
-];
+
 
 @NgModule({
   declarations: [
@@ -34,7 +29,6 @@ const routes:Routes=
     CrudRoomsComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     FormsModule,

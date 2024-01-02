@@ -1,7 +1,9 @@
 <div class="navbar">
-    <p>MetHotels</p>
-    <a routerLink="/ponuda">Ponuda</a>
-    <a routerLink="/preporuka">Preporuka</a>
-    <a routerLink="/onama">O nama</a>
+    <a id="naslov" [routerLink]="['']"><p>MetHotels</p></a>
+    <a [routerLink]="['/ponuda']">Ponuda</a>
+    <a [routerLink]="['/preporuka']">Preporuka</a>
+    <a [routerLink]="['/onama']">O nama</a>
+    <a [routerLink]="['/rooms']">Rooms</a>
+    <a [routerLink]="['/crud']">CRUD</a>
 </div>
 <router-outlet></router-outlet>
