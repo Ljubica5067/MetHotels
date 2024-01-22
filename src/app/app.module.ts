@@ -15,6 +15,7 @@ import { RoomServiceService } from './servis/room-service.service';
 import { Rooms } from './rooms/rooms.model';
 import { CrudRoomsComponent } from './crud-rooms/crud-rooms.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     PreporukaComponent,
     OnamaComponent,
     DiComponent,
-    CrudRoomsComponent
+    CrudRoomsComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,
