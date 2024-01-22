@@ -16,6 +16,9 @@ import { Rooms } from './rooms/rooms.model';
 import { CrudRoomsComponent } from './crud-rooms/crud-rooms.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { RezervacijeComponent } from './rezervacije/rezervacije.component';
+import { StoreModule } from '@ngrx/store';
+import { roomReducer, metaReducerLocalStorage } from './state/room.reducer';
 
 
 @NgModule({
@@ -28,14 +31,16 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     OnamaComponent,
     DiComponent,
     CrudRoomsComponent,
-    RxjsComponent
+    RxjsComponent,
+    RezervacijeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({rezervacijeUnosi: roomReducer}, {metaReducers: [metaReducerLocalStorage]})
   ],
   providers: [RoomServiceService,],
   bootstrap: [AppComponent]

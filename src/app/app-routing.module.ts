@@ -6,6 +6,7 @@ import { OnamaComponent } from './onama/onama.component';
 import { CrudRoomsComponent } from './crud-rooms/crud-rooms.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { RezervacijeComponent } from './rezervacije/rezervacije.component';
 
 const routes: Routes =
   [
@@ -15,7 +16,8 @@ const routes: Routes =
     { path: 'onama', component: OnamaComponent },
     { path: 'crud', component: CrudRoomsComponent },
     { path: 'rooms', component: RoomsComponent },
-    { path: 'pogled', component: RxjsComponent }
+    { path: 'pogled', component: RxjsComponent },
+    { path: 'rezervacija', component: RezervacijeComponent },
   ];
 
 @NgModule({

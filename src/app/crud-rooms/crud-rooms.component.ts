@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CrudRoomsModel } from './crud-rooms.model';
 import { DataService } from '../servis/data.service';
+import { Store } from '@ngrx/store';
+import { addReservation } from '../state/room.action';
 
 @Component({
   selector: 'app-crud-rooms',
@@ -16,7 +18,7 @@ export class CrudRoomsComponent {
     showAdd!:boolean;
     showUpdate!:boolean;
 
-    constructor(private FormBuilder:FormBuilder,private servis:DataService)
+    constructor(private FormBuilder:FormBuilder,private servis:DataService,private store:Store)
     {}
 
     ngOnInit():void
@@ -97,6 +99,11 @@ export class CrudRoomsComponent {
           this.formValue.reset();
           this.getAllRooms();
         });
+    }
+
+    rezervisiSobu(room: CrudRoomsModel){
+      alert("Rezervisano!");
+      this.store.dispatch(addReservation(room));
     }
 
     
